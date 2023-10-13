@@ -1,0 +1,114 @@
+Data Retrieval, Clean and Process, Transformation and Analysis, Iterate and Refine
+
+
+
+SELECT * FROM scm.datasets;
+
+-- How many times a different Type of Transaction happens
+
+SELECT `Type of Transaction`, COUNT(*) as TransactionCount
+FROM scm.datasets
+GROUP BY `Type of Transaction`
+ORDER BY TransactionCount ASC;
+
+-- Average days for shipping 
+
+SELECT AVG('Days for shipping (real)')
+AS Avg_Days_For_Shipping
+FROM scm.datasets
+ORDER BY Avg_Days_For_Shipping ASC;
+
+-- Benefit per order
+
+SELECT SUM('Benefit per order')
+AS Total_Benefit
+FROM scm.datasets;
+
+-- Average sales per customer
+
+SELECT AVG(`Sales per customer`) as Avg_Sales_PerCustomer
+FROM scm.datasets
+ORDER by Avg_Sales_PerCustomer;
+
+-- Find the types of delivery
+
+SELECT `Delivery Status`, COUNT(*) as DeliveryCount
+FROM scm.datasets
+GROUP BY `Delivery Status`
+ORDER BY DeliveryCount ASC;
+
+-- Category Name by Sales per customer
+
+SELECT 'Category Name', SUM('Sales per customer') as 
+Total_sales
+FROM scm.datasets
+Group by 'Category Name'
+ORDER by Total_sales ASC;
+
+-- Customer Segment
+
+SELECT 'Customer Segment', COUNT(*) AS Order_Count
+from scm.datasets
+group by 'Customer Segment';
+
+-- Maximum Sales per customer by country
+
+SELECT `Order Country`, MAX(`Sales per customer`) as TotalSales
+FROM scm.datasets
+GROUP BY `Order Country`
+ORDER BY TotalSales DESC;
+
+-- Latitide_Per_Sales
+
+SELECT Latitude, AVG(`Sales per customer`) AS Latitide_Per_Sales
+from scm.datasets
+group by('Sales per customer');
+
+-- Find how many location is existed
+
+SELECT COUNT(DISTINCT market) AS LocationCount
+FROM scm.datasets;
+
+-- Max Sales per customer by market
+
+SELECT market, MAX('Sales per customer') AS MaxSales
+FROM scm.datasets;
+
+-- Shipping Mode
+
+SELECT `Shipping Mode`, COUNT(*) as ModeCount
+FROM scm.datasets
+GROUP BY `Shipping Mode`
+Order by ModeCount ASC;
+
+-- Order Status Count
+
+SELECT `Order Status`, COUNT(*) as StatusCount
+FROM scm.datasets
+GROUP BY `Order Status`
+Order by 'StatusCount' ASC;
+
+-- Select selected stock
+
+SELECT Stock, COUNT(*) AS STOCK
+FROM scm.datasets
+group by Stock
+having count(*)> 3 and count(*)<=10
+Order by STOCK ASC;
+
+
+-- Which SKU types has how many Stock
+
+SELECT Stock, max(type) AS STOCK
+FROM scm.datasets
+group by Stock
+Order by STOCK desc;
+
+-- Type of product by Sales per customer
+
+SELECT `Type of product`, SUM(`Sales per customer`) as TotalSales
+FROM scm.datasets
+GROUP BY `Type of product`
+ORDER BY TotalSales DESC;
+
+
