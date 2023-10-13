@@ -8,7 +8,9 @@ Supply-Chain-and-Operations-Optimization-Analytics End to End Project
 Project Title: Supply Chain and Operations Optimization Analytics (Excel, MYSQL, Power BI[Power Query, DAX, Visualization])
 
 
+
 Project objectives: To optimize supply chain for efficiency, cost savings, and enhanced customer satisfaction on key metrics
+
 
 
 •	Developed Regression Analytics, cutting costs by 10% and boosting Supply Chain efficiency by 15%
