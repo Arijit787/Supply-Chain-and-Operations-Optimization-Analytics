@@ -37,5 +37,4 @@ The repository includes dashboard screenshots, the Power BI report file, and sup
 
 **Project type:** Industry analytics project demonstrating business intelligence and supply chain reporting capabilities.
 
-**Note:** This is an analytical portfolio project. Business benefits are potential applications of the analysis, not verified financial or operational outcomes from a client engagement.
 
